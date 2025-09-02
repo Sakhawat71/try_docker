@@ -1,13 +1,16 @@
-// import express from 'express';
-const express = require('express')
+const express = require('express');
 
 const app = express();
 const PORT = 5000;
 
 app.get('/', (req, res) => {
-    res.send("Hello, Docker!");
+    res.send({
+        success: true,
+        message: "Hello, Docker!",
+        timestamp: new Date().toISOString(),
+    });
 });
 
 app.listen(PORT, () => {
     console.log(`Example app listening on port ${PORT}`)
-})
+});
